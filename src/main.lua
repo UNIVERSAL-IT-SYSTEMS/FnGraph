@@ -86,6 +86,12 @@ function love.load()
 
     local points = getPoints(fn)
 
+    for i=1, #points do
+        if (points[i] == math.huge) or (points[i] == -math.huge) then
+            points[i] = 0
+        end
+    end
+
     draw(points)
 end
 
